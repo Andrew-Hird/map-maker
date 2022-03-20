@@ -28,7 +28,6 @@ const MyMapComponent = ({
 }: MyMapComponentProps) => {
   const ref = useRef<HTMLDivElement>(null);
   const [map, setMap] = React.useState<google.maps.Map>();
-  const [marker, setMarker] = React.useState<google.maps.Marker>();
 
   // set map and marker
   useEffect(() => {
@@ -48,7 +47,7 @@ const MyMapComponent = ({
             ],
         }));
     }
-  }, [ref, map, marker]);
+  }, [ref, map, center, zoom]);
 
   // set markers and directions on map
   useEffect(() => {
@@ -59,7 +58,7 @@ const MyMapComponent = ({
         directionsRenderer.setMap(map);
 
         // set markers
-        locations.map((location) => {
+        locations.forEach((location) => {
             const lat = parseFloat(location.lat)
             const lng = parseFloat(location.lng)
     
@@ -95,7 +94,7 @@ const MyMapComponent = ({
             )
         }
     }
-  }, [locations])
+  }, [locations, map])
 
   return <div ref={ref} id="map" />;
 }

@@ -32,7 +32,7 @@ const Locations = ({ handleLocationAdd} : Props) => {
 
     useEffect(() => {
         reset()
-      }, [isSubmitSuccessful])
+      }, [isSubmitSuccessful, reset])
 
     return (
         <LocationCont className='location'>
