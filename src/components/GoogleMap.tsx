@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, ReactElement } from "react";
+import React, { useEffect, useRef, useState, ReactElement } from "react";
 import { Wrapper, Status } from "@googlemaps/react-wrapper"
 import { Location } from "./Locations"
 import markerIcon from "../img/map-pin.svg"
@@ -24,7 +24,7 @@ const MyMapComponent = ({
   locations,
 }: MyMapComponentProps) => {
   const ref = useRef<HTMLDivElement>(null);
-  const [map, setMap] = React.useState<google.maps.Map>();
+  const [map, setMap] = useState<google.maps.Map>();
 
   // set map and marker
   useEffect(() => {
@@ -55,7 +55,7 @@ const MyMapComponent = ({
             polylineOptions: {
                 strokeColor: "#4c98f0",
                 strokeWeight: 6,
-                strokeOpacity: 0.8,
+                strokeOpacity: 1,
             } 
         });
 
