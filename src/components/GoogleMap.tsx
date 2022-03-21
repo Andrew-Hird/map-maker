@@ -1,13 +1,10 @@
 import React, { useEffect, useRef, ReactElement } from "react";
 import { Wrapper, Status } from "@googlemaps/react-wrapper"
 import { Location } from "./Locations"
+import markerIcon from "../img/map-pin.svg"
 
 const center = { lat: -40.9006, lng: 174.8860 }
 const zoom = 5;
-
-// const auckland = { lat: -36.848461, lng: 174.763336 }
-// const taupo = { lat: -38.685692, lng: 176.070206 }
-// const napier = { lat: -39.492844, lng: 176.912018 }
 
 const render = (status: Status): ReactElement => {
   if (status === Status.LOADING) return <h3>{status} ..</h3>;
@@ -53,7 +50,14 @@ const MyMapComponent = ({
   useEffect(() => {
     if (map) {
         const directionsService = new window.google.maps.DirectionsService();
-        const directionsRenderer = new google.maps.DirectionsRenderer({ suppressMarkers: true });
+        const directionsRenderer = new google.maps.DirectionsRenderer({ 
+            suppressMarkers: true, 
+            polylineOptions: {
+                strokeColor: "#4c98f0",
+                strokeWeight: 6,
+                strokeOpacity: 0.8,
+            } 
+        });
 
         directionsRenderer.setMap(map);
 
@@ -69,6 +73,10 @@ const MyMapComponent = ({
                     text: location.name,
                     className: "marker-label"
                 },
+                icon: {
+                    url: markerIcon,
+                    scaledSize: new google.maps.Size(25, 25)
+                }
             })
         })
 
