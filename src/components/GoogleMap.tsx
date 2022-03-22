@@ -71,6 +71,7 @@ const MyMapComponent = ({
                 map,
                 label: {
                     text: location.name,
+                    fontSize: "10px",
                     className: "marker-label"
                 },
                 icon: {

@@ -7,14 +7,14 @@ export const testLocations: Location[] = [
         lng: "174.763336" 
     },
     { 
-        name: "Taupo",
-        lat: "-38.685692", 
-        lng: "176.070206" 
+        name: "Hawkes Bay",
+        lat: "-39.416665", 
+        lng: "176.8166634" 
     },
     { 
-        name: "Napier",
-        lat: "-39.492844", 
-        lng: "176.912018"
+        name: "Martinborough",
+        lat: "-41.219093204", 
+        lng: "175.46006510"
     },
     { 
         name: "Wellington",
