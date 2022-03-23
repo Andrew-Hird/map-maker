@@ -56,7 +56,7 @@ const MyMapComponent = ({
             suppressMarkers: true,
             polylineOptions: {
                 strokeColor: "#4c98f0",
-                strokeWeight: 6,
+                strokeWeight: 4,
                 strokeOpacity: 1,
             }
         });
